@@ -1,55 +1,182 @@
-# 🎭 XSS (Cross-Site Scripting) 专项实验室
+# XSS (Cross-Site Scripting) Training Lab
 
-本模块专注于 **XSS (跨站脚本攻击)** 的全链路攻防演练。XSS 是一种通过在目标网站中注入恶意脚本，使用户在浏览器端执行非预期指令的攻击方式，是 Web 开发中最常见的安全隐患之一。
-
----
-
-## 📂 模块结构 (Module Structure)
-
-为了深入理解不同维度的攻击向量，本模块分为三个子部分：
-
-- 🧪 [**Reflected (反射型)**](./Reflected.md) : 脚本通过 URL 参数传递，具有即时性，常用于社交工程钓鱼。
-- 💾 [**Stored (存储型)**](./Stored.md) : 脚本被持久化存储在数据库中，任何访问相关页面的用户均受影响，危害极大。
-- 📜 [**DOM-based (DOM 型)**](./DOM.md) : 纯前端逻辑漏洞，攻击不经过后端服务器，隐蔽性极高。
+> DVWA-based full-spectrum XSS attack & defense training, covering Reflected / Stored / DOM Based XSS across Low, Medium, and High security levels.
 
 ---
 
-## 🚀 核心实战要点 (Technical Highlights)
+## Module Structure
 
-### 1. 常见攻击载荷 (Payloads)
-* **会话劫持**：利用 `document.cookie` 窃取 Session ID，配合非法工具实现免密登录。
-* **钓鱼重定向**：通过 `window.location.href` 强制跳转至伪造的登录界面。
-* **前端篡改**：利用 DOM 操作修改 HTML 元素，例如伪造转账按钮或系统提示。
+```
+XSS/
+├── README.md                          ← You are here
+├── Reflect-XSS/
+│   ├── README.md                      ← Reflected XSS technical walkthrough
+│   └── DVWA Reflected XSS 渗透测试训练报告.pdf
+├── STORE-XSS/
+│   ├── README.md                      ← Stored XSS technical walkthrough
+│   └── DVWA Stored XSS 渗透测试训练报告.pdf
+└── DOM-XSS/
+    ├── README.md                      ← DOM Based XSS technical walkthrough
+    └── DVWA DOM Based XSS 渗透测试训练报告.pdf
+```
 
-### 2. 绕过过滤策略 (Bypass Techniques)
-* **变换编码**：使用十六进制、Base64 或 URL 编码规避简单的关键字检测。
-* **标签混淆**：利用事件监听器（如 `onerror`、`onmouseover`）代替传统的 `<script>` 标签。
-* **伪协议利用**：通过 `javascript:` 伪协议在链接或图片属性中嵌入脚本。
+| Module | Focus | Link |
+|--------|-------|------|
+| **Reflected XSS** | URL parameter injection, instant execution, social engineering | [Enter Module](./Reflect-XSS/) |
+| **Stored XSS** | Persistent payload in database, affects all visitors | [Enter Module](./STORE-XSS/) |
+| **DOM Based XSS** | Pure frontend vulnerability, invisible to server & WAF | [Enter Module](./DOM-XSS/) |
 
----
-
-## 💼 售前视角：业务风险分析 (Pre-sales Insight)
-
-> [!WARNING]
-> **“前端失守即信任崩溃”** —— XSS 直接攻击的是企业的最终用户。一旦发生，将直接导致用户资产损失与企业品牌信誉跌至冰点。
-
-### 场景模拟：大学生就业系统 - “企业简介”投毒
-* **风险点**：若系统中“企业简介”编辑框未进行严格过滤，恶意企业可植入**存储型 XSS**。
-* **连锁反应**：
-    1. 学生浏览该企业职位，浏览器后台自动执行恶意脚本。
-    2. 学生的登录凭证（Cookie）被发送至攻击者服务器。
-    3. 攻击者接管学生账号，窃取简历、篡改申请进度。
-* **商业后果**：平台由于保护用户隐私不力，将面临大批用户注销、负面舆论爆发及合规性罚款。
-
-### 推荐安全解决方案 (Solution)：
-1. **输入净化与转义 (Sanitization)**：采用标准化的 HTML 实体转义机制，将危险字符（如 `<`、`>`）转化为安全实体。
-2. **安全头部策略 (Security Headers)**：
-   - 开启 **HttpOnly** 标志，禁止脚本访问敏感 Cookie。
-   - 配置 **Content Security Policy (CSP)**，限制外部脚本的加载来源。
-3. **边界清洗**：利用 **WAF (Web 应用防火墙)** 对异常的脚本注入特征进行实时阻断。
+Each module contains:
+- **README.md** — Source code analysis, bypass techniques, payloads, and fix for each DVWA level
+- **PDF Report** — Professional penetration testing report with business risk analysis
 
 ---
 
-## 🛠️ 实验工具栈
-- **靶场环境**: DVWA v1.10
-- **关键工具**: HackBar, Burp Suite, Browser Console
+## What is XSS?
+
+Cross-Site Scripting (XSS) is a code injection attack where an attacker injects malicious scripts into web pages viewed by other users. When a victim's browser renders the page, the script executes with the victim's session privileges — enabling cookie theft, session hijacking, page defacement, and phishing.
+
+XSS consistently ranks in the **OWASP Top 10** and remains one of the most prevalent web vulnerabilities worldwide.
+
+---
+
+## Three Types at a Glance
+
+### Reflected XSS
+
+```
+Attacker → Crafts malicious URL → Victim clicks → Server reflects payload → Browser executes
+```
+
+The payload travels through a URL parameter, hits the server, and is reflected back into the HTML response without sanitization. Requires the victim to click a crafted link.
+
+### Stored XSS
+
+```
+Attacker → Submits payload via form → Stored in database → ANY visitor loads the page → Browser executes
+```
+
+The payload is permanently stored on the server (database, comment field, etc.). Every user who visits the affected page is automatically attacked — no malicious link needed.
+
+### DOM Based XSS
+
+```
+Attacker → Crafts malicious URL → Victim clicks → JavaScript reads URL → Writes payload into DOM → Browser executes
+```
+
+The payload never reaches the server. Client-side JavaScript reads from an untrusted source (URL, hash fragment) and writes directly into the DOM. Server logs and WAF see nothing.
+
+---
+
+## Comparison Matrix
+
+| | Reflected | Stored | DOM Based |
+|---|---|---|---|
+| **Payload location** | Server HTTP response | Database | Browser DOM |
+| **Passes through server** | Yes | Yes | **No** |
+| **Persistence** | One-time (URL) | Permanent (DB) | One-time (URL/Fragment) |
+| **Trigger** | Victim clicks link | Victim visits page | Victim clicks link |
+| **Impact scope** | Single user | **All visitors** | Single user |
+| **WAF detectable** | Yes | Yes | **No** |
+| **Server log visible** | Yes | Yes | **No** (especially `#` fragments) |
+| **Stealth level** | Medium | Low | **High** |
+| **Severity** | High | **Critical** | High-Critical |
+| **DVWA Module** | [Reflect-XSS](./Reflect-XSS/) | [STORE-XSS](./STORE-XSS/) | [DOM-XSS](./DOM-XSS/) |
+
+---
+
+## Key Bypass Techniques Covered
+
+| Technique | Used In | Description |
+|-----------|---------|-------------|
+| Direct `<script>` injection | All — Low | No defense, payload executes directly |
+| Case manipulation (`<ScRiPt>`) | Reflected/Stored — Medium | `str_replace` is case-sensitive |
+| Nested/Double-write (`<scr<script>ipt>`) | Reflected/Stored — Medium | Inner tag removed, outer fragments reassemble |
+| Alternative tags (`<img>`, `<svg>`) | All — Medium/High | Event handlers bypass `<script>`-only filters |
+| Closing parent tags (`</select>`) | DOM — Medium | Required when injection point is inside `<select>` |
+| `#` URL fragment bypass | DOM — High | Fragment never sent to server, bypasses server-side whitelist |
+| `maxlength` bypass (F12/Burp) | Stored — Medium/High | Frontend restriction, not a security measure |
+
+---
+
+## Defense Overview
+
+All three XSS types share the same fundamental fix: **output encoding**.
+
+### The One Fix That Matters
+
+```php
+// Server-side: encode ALL output
+$output = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+```
+
+```javascript
+// Client-side: use safe DOM APIs
+element.textContent = userInput;  // NOT innerHTML, NOT document.write()
+```
+
+### Defense in Depth
+
+| Layer | Measure | Protects Against |
+|-------|---------|-----------------|
+| **Code** | `htmlspecialchars()` / `textContent` | All XSS types |
+| **HTTP** | `Content-Security-Policy: script-src 'self'` | Inline script execution |
+| **Cookie** | `HttpOnly` flag | Cookie theft via `document.cookie` |
+| **Session** | Anti-CSRF tokens | Cross-site form submission |
+| **Database** | Prepared Statements | SQL injection (defense in depth) |
+| **Architecture** | Template engines with auto-escaping | Developer oversight |
+| **Testing** | Automated XSS scanners + DOM-aware tools | Regression & detection |
+
+---
+
+## Environment Setup
+
+### Prerequisites
+
+| Tool | Purpose |
+|------|---------|
+| [DVWA](https://github.com/digininja/DVWA) | Vulnerable web application (target) |
+| PHP + MySQL (e.g., phpStudy) | DVWA runtime environment |
+| Burp Suite | HTTP interception & request modification |
+| Browser DevTools (F12) | DOM inspection, `maxlength` bypass, network analysis |
+
+### Quick Start
+
+1. Install and configure DVWA
+2. Login with `admin` / `password`
+3. Navigate to **DVWA Security** → Set security level
+4. Choose an XSS module and follow the corresponding README
+
+### Recommended Training Order
+
+```
+1. Reflected XSS (simplest attack model, understand the basics)
+       ↓
+2. Stored XSS  (persistent attacks, learn field-level defense gaps)
+       ↓
+3. DOM Based XSS (client-side attacks, understand the # fragment trick)
+```
+
+---
+
+## Key Takeaways
+
+1. **Output encoding is the only reliable XSS defense** — blacklist filtering (`str_replace`, `preg_replace`) can always be bypassed
+2. **Security must cover ALL fields** — Stored XSS Medium/High secured `message` but forgot `name` (barrel effect)
+3. **Frontend code is an attack surface** — DOM XSS proves that server-side defenses alone are insufficient
+4. **`#` fragments are invisible to servers** — a critical blind spot for traditional security monitoring
+5. **Frontend restrictions are not security** — `maxlength`, client-side validation can be bypassed in seconds
+
+---
+
+## Disclaimer
+
+This repository is for **authorized security training and educational purposes only**. All tests were conducted on local DVWA instances. Do not use these techniques against any system without explicit written authorization. Unauthorized access to computer systems is illegal.
+
+## References
+
+- [DVWA Official Repository](https://github.com/digininja/DVWA)
+- [OWASP Top 10 — A03:2021 Injection](https://owasp.org/Top10/A03_2021-Injection/)
+- [OWASP XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Scripting_Prevention_Cheat_Sheet.html)
+- [OWASP DOM Based XSS](https://owasp.org/www-community/attacks/DOM_Based_XSS)
+- [CWE-79: Improper Neutralization of Input During Web Page Generation](https://cwe.mitre.org/data/definitions/79.html)
