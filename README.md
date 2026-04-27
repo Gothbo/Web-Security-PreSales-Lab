@@ -1,66 +1,157 @@
-# 🛡️ Web Security & Solution Architecture Lab
-![Version](https://img.shields.io/badge/Status-In--Progress-orange)
-![Field](https://img.shields.io/badge/Focus-Cybersecurity%20%7C%20Pre--sales-blue)
+# Web Security & Pre-Sales Solution Lab
 
-本项目是一个专注于 **Web 安全攻防实战**与**售前解决方案**的深度学习仓库。通过模拟真实靶场环境（如 DVWA），将底层的技术注入原理转化为可交付的业务安全方案。
+![Status](https://img.shields.io/badge/Status-In--Progress-orange)
+![Focus](https://img.shields.io/badge/Focus-Cybersecurity%20%7C%20Pre--Sales-blue)
+![Platform](https://img.shields.io/badge/Platform-DVWA-red)
+![License](https://img.shields.io/badge/License-Educational-green)
+
+A hands-on **web security attack & defense** training repository with a **pre-sales solution** perspective. By exploiting real vulnerabilities in DVWA, each module translates low-level injection techniques into deliverable business security proposals.
 
 ---
-## 📂 项目目录结构 (Project Structure)
 
-使用清晰的目录树管理不同维度的安全实验与案例研究：
+## Project Structure
 
-```text
+```
 Web-Security-PreSales-Lab/
-├── SQL-Injection/              # SQL 注入专项实验
-│   ├── README.md               # 模块索引与售前视角总结
-│   ├── DVWA-SQL-Injection.pdf  # 核心实战报告 (PDF)
-│   └── payloads.sql            # 实战 Payload 手册
-├── XSS/                        # 跨站脚本攻击专项
-│   ├── README.md               # 模块索引
-│   ├── Reflected.md            # 反射型实验记录
-│   ├── Stored.md               # 存储型实验记录
-│   └── DOM.md                  # DOM 型实验记录
-├── CSRF/                       # 跨站请求伪造专项
-│   └── README.md               # 防护方案与实验
-├── Case-Study/                 # 行业案例研究库 (售前核心)
-│   └── 电商系统SQL注入案例.md    # 业务场景模拟分析
-└── README.md                   # 总入口导航
+│
+├── SQL-Injection/                         # SQL Injection Lab
+│   ├── README.md                          # Module overview & pre-sales summary
+│   ├── DVWA-SQL-Injection.pdf             # Full penetration testing report
+│   └── payloads.sql                       # Payload reference handbook
+│
+├── XSS/                                   # Cross-Site Scripting Lab
+│   ├── README.md                          # XSS overview & navigation
+│   ├── Reflect-XSS/                       # Reflected XSS module
+│   │   ├── README.md                      # Technical walkthrough (Low/Med/High)
+│   │   └── DVWA Reflected XSS ...pdf      # Penetration testing report
+│   ├── STORE-XSS/                         # Stored XSS module
+│   │   ├── README.md                      # Technical walkthrough (Low/Med/High)
+│   │   └── DVWA Stored XSS ...pdf         # Penetration testing report
+│   └── DOM-XSS/                           # DOM Based XSS module
+│       ├── README.md                      # Technical walkthrough (Low/Med/High)
+│       └── DVWA DOM Based XSS ...pdf      # Penetration testing report
+│
+├── CSRF/                                  # Cross-Site Request Forgery Lab
+│   └── README.md                          # Defense strategies & experiments
+│
+├── Case-Study/                            # Industry Case Studies (Pre-Sales)
+│   └── README.md                          # Business scenario analysis
+│
+└── README.md                              # ← You are here
 ```
 
-## 🗺️ 学习规划与路线图 (Roadmap)
+---
 
-本仓库按漏洞类型划分为多个专项实验室，每个模块均包含：**源码审计**、**Payload 实战**、**业务影响分析**及**售前修复建议**。
+## Module Roadmap
 
-### 1. [SQL Injection (SQL 注入)](./SQL-Injection/) 
-> **当前状态：已完成 ✅**
-- **核心重点**：数字型/字符串型注入、Hex 编码绕过、Collation 冲突解决。
-- **产出**：完整实战报告 PDF、Payload 脚本库。
+Each module covers: **source code audit** | **payload exploitation** | **business impact analysis** | **pre-sales remediation advice**
 
-### 2. [XSS (跨站脚本攻击)](./XSS/) 
-> **当前状态：计划中 ⏳**
-- **核心重点**：反射型、存储型与 DOM 型的差异及危害。
-- **业务场景**：窃取 Cookie 导致账户接管、前端页面篡改。
-- **售前视角**：如何向客户解释 CSP (内容安全策略) 与输入净化。
+### 1. [SQL Injection](./SQL-Injection/)
 
-### 3. [CSRF (跨站请求伪造)](./CSRF/) 
-> **当前状态：计划中 ⏳**
-- **核心重点**：利用用户身份执行非预期操作。
-- **业务场景**：非法资金转账、后台配置修改。
-- **售前视角**：Token 机制与 SameSite 属性的必要性。
+> **Status: Completed**
 
-### 4. [Case Study (行业案例研究)](./Case-Study/)
-> **当前状态：构建中 🏗️**
-- **核心重点**：将实验室技术映射到真实业务环境（如：毕业设计、电商、OA系统）。
-- **目标**：练习如何向非技术背景客户描述安全风险。
+- Numeric & string-based injection, Hex encoding bypass, Collation conflict resolution
+- Deliverables: Full penetration testing report (PDF), payload script library
+
+### 2. [XSS (Cross-Site Scripting)](./XSS/)
+
+> **Status: Completed**
+
+Three sub-modules covering the full XSS attack surface:
+
+| Sub-Module | Key Technique | Bypass Highlights |
+|-----------|--------------|-------------------|
+| [Reflected XSS](./XSS/Reflect-XSS/) | URL parameter injection | Case manipulation, nested tags, alternative event handlers |
+| [Stored XSS](./XSS/STORE-XSS/) | Persistent payload in DB | `maxlength` bypass, field-level defense gap ("barrel effect") |
+| [DOM Based XSS](./XSS/DOM-XSS/) | Client-side DOM manipulation | `</select>` tag closure, `#` fragment bypass (invisible to server) |
+
+**Pre-Sales Perspective:**
+- How to explain CSP (Content Security Policy) and output encoding to non-technical stakeholders
+- Why WAF alone cannot defend against DOM XSS
+- Business risk quantification: cookie theft → account takeover → data breach
+
+### 3. [CSRF (Cross-Site Request Forgery)](./CSRF/)
+
+> **Status: Planned**
+
+- Exploiting authenticated sessions to perform unauthorized actions
+- Business scenarios: unauthorized fund transfers, admin configuration changes
+- Pre-Sales focus: Token mechanisms and `SameSite` cookie attribute
+
+### 4. [Case Study (Industry Scenarios)](./Case-Study/)
+
+> **Status: In Progress**
+
+- Mapping lab techniques to real-world business environments (e-commerce, OA systems, etc.)
+- Practice articulating security risks to non-technical clients and decision-makers
 
 ---
 
-## 🛠️ 实验工具栈 (Toolbox)
-- **Web 环境**: phpStudy (WAMP)
-- **分析工具**: Burp Suite, Browser DevTools
-- **文档管理**: Markdown + PDF (Professional Layout)
+## Vulnerability Coverage Matrix
+
+| Vulnerability | DVWA Low | DVWA Medium | DVWA High | Report | Pre-Sales Analysis |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| SQL Injection | Done | Done | Done | PDF | Included |
+| Reflected XSS | Done | Done | Done | PDF | Included |
+| Stored XSS | Done | Done | Done | PDF | Included |
+| DOM Based XSS | Done | Done | Done | PDF | Included |
+| CSRF | - | - | - | - | Planned |
 
 ---
 
-## 🛡️ 免责声明
-本项目所有技术内容仅供合法安全研究与售前方案演练，严禁用于任何未经授权的非法测试。
+## Toolbox
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| Target Platform | [DVWA](https://github.com/digininja/DVWA) | Deliberately vulnerable web application |
+| Web Environment | phpStudy (WAMP) | PHP + MySQL + Apache runtime |
+| Proxy & Intercept | Burp Suite | HTTP traffic interception & request tampering |
+| Browser | Chrome / Firefox DevTools (F12) | DOM inspection, `maxlength` bypass, network analysis |
+| Documentation | Markdown + PDF | Professional report formatting |
+
+---
+
+## Getting Started
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Gothbo/Web-Security-PreSales-Lab.git
+
+# 2. Set up DVWA on your local environment (phpStudy recommended)
+
+# 3. Pick a module and start training
+#    Recommended order: SQL Injection → XSS → CSRF
+```
+
+**Suggested Learning Path:**
+
+```
+SQL Injection (foundation — understand server-side injection)
+      ↓
+Reflected XSS (URL-based script injection)
+      ↓
+Stored XSS (persistent attacks, field-level defense gaps)
+      ↓
+DOM Based XSS (client-side attacks, # fragment bypass)
+      ↓
+CSRF (session-based attacks)
+      ↓
+Case Study (translate techniques into business proposals)
+```
+
+---
+
+## Disclaimer
+
+All content in this repository is for **authorized security training and educational purposes only**. All tests were conducted on local DVWA instances. Do not use these techniques against any system without explicit written authorization. Unauthorized access to computer systems is illegal.
+
+---
+
+## References
+
+- [DVWA Official Repository](https://github.com/digininja/DVWA)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [OWASP XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Scripting_Prevention_Cheat_Sheet.html)
+- [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+- [CWE-79: XSS](https://cwe.mitre.org/data/definitions/79.html)
+- [CWE-89: SQL Injection](https://cwe.mitre.org/data/definitions/89.html)
