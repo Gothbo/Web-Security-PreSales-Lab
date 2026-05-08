@@ -40,7 +40,7 @@
 
 | 行业 | 案例名称 | 核心问题 | 方案亮点 |
 |------|---------|---------|---------|
-| 零售 | [攻击溯源案例](Case-Study/examples/Retail-company-attack%20-attribution.md) | 设备买了但看不清攻击路径 | 三天出溯源报告 |
+| 零售 | [攻击溯源案例](Case-Study/examples/Retail-company-attack-attribution.md) | 设备买了但看不清攻击路径 | 三天出溯源报告 |
 | 教育 | [API数据泄露案例](Case-Study/examples/Online-education-system.md) | 测试接口没鉴权泄露30万数据 | 先止血再排查 |
 | 金融 | [城商行数据合规案例](Case-Study/examples/Bank-data-security-compliance.md) | 监管整改通知，数据分类分级不清 | 合规驱动+总分行一体化 |
 | 医疗 | [三甲医院安全案例](Case-Study/examples/Core-system-security-of-tertial-hospitals.md) | 勒索攻击导致挂号中断2小时 | 业务不中断+防勒索 |
