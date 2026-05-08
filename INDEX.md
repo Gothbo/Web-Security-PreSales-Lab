@@ -14,6 +14,7 @@
 | 不同客户怎么应对 | [场景化询问顺序](售前询问顺序按场景灵活调整.md) |
 | 怎么讲案例不编造 | [案例引用四法](售前案例引用四法.md) |
 | 售前对话完整流程 | [AI模拟器SKILL.md](skills/domain/security-pre-sales-simulator/SKILL.md) |
+| Web漏洞与售前关联 | [Web安全技术关联指南](Web安全技术与售前场景关联.md) |
 
 ### 基础知识
 
@@ -22,6 +23,10 @@
 | 法规合规（等保/个保法/数安法） | [合规与法规](casestudy/compliance-and-regulations.md) |
 | 安全产品通俗解释 | [安全产品指南](casestudy/security-products-guide.md) |
 | 云安全架构 | [云安全架构](casestudy/cloud-security-and-architecture.md) |
+| **XSS跨站脚本** | [XSS完整指南](XSS/README.md) / [反射型](XSS/Reflect-XSS/README.md) / [存储型](XSS/STORE-XSS/README.md) / [DOM型](XSS/DOM-XSS/README.md) |
+| **SQL注入** | [SQL注入指南](SQL-Injection/README.md) / [payloads.sql](SQL-Injection/payloads.sql) |
+| **CSRF跨站请求伪造** | [CSRF完整指南](CSRF/README.md) |
+| DVWA训练环境 | XSS/SQL注入/CSRF三大模块，配合Burp Suite实战 |
 
 ### 面试准备
 
@@ -135,3 +140,4 @@
 | 产品 | `WAF` / `EDR` / `DLP` / `XDR` / `MSS` / `SIEM` |
 | 合规 | `等保` / `个保法` / `数安法` / `TISAX` |
 | 行业 | `零售` / `教育` / `金融` / `医疗` / `政府` / `制造` |
+| Web漏洞 | `XSS` / `SQL注入` / `CSRF` / `DVWA` / `htmlspecialchars` / `PDO` |
