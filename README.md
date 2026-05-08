@@ -8,11 +8,11 @@
 
 | 你想了解 | 直接跳转 |
 |----------|---------|
-| 我是新手，怎么系统学习？ | [30天速成计划](casestudy/30-day-plan.md) |
-| 想练习售前对话 | [AI模拟器](skills/domain/security-pre-sales-simulator/SKILL.md) |
-| 想直接看案例 | [案例集合](#-案例学习) |
-| 想找方法论 | [方法论速查](#-方法论) |
-| 准备面试 | [面试题库](售前安全工程师面试题库.md) |
+| 我是新手，怎么系统学习？ | [30天速成计划](Case-Study/Learning-materials/30-day-plan.md) |
+| 想直接看案例 | [案例集合](#案例学习) |
+| 想找方法论 | [方法论速查](#方法论) |
+| 准备面试 | [面试题库](Case-Study/Learning-materials/售前安全工程师面试题库.pdf) |
+| 想练Web安全实战 | [Web安全基础](#web安全基础dvwa实战) |
 
 ---
 
@@ -23,7 +23,7 @@
 - **基础知识**：合规法规、安全产品、云安全架构、Web漏洞实战(XSS/SQL注入/CSRF)
 - **方法论**：客户询问技巧、方案匹配逻辑、案例引用方法
 - **案例学习**：覆盖零售、教育、金融、医疗、政府、制造6大行业
-- **面试准备**：题库 + AI模拟器实战练习
+- **面试准备**：题库 + 实战练习
 
 **核心理念**：售前不是卖产品清单，而是帮客户理清问题，再给对应的解法。
 
@@ -31,16 +31,17 @@
 
 ## 案例学习
 
-### 已完成案例（6个）
+### 已完成案例（7个）
 
 | 行业 | 案例名称 | 核心问题 | 方案亮点 |
 |------|---------|---------|---------|
-| 零售 | [攻击溯源案例](售前案例学习_零售公司攻击溯源.md) | 设备买了但看不清攻击路径 | 三天出溯源报告 |
-| 教育 | [API数据泄露案例](售前案例学习_在线教育API数据泄露.md) | 测试接口没鉴权泄露30万数据 | 先止血再排查 |
-| 金融 | [城商行数据合规案例](售前案例学习_城商行数据安全合规.md) | 监管整改通知，数据分类分级不清 | 合规驱动+总分行一体化 |
-| 医疗 | [三甲医院安全案例](售前案例学习_三甲医院核心系统安全.md) | 勒索攻击导致挂号中断2小时 | 业务不中断+防勒索 |
-| 政府 | [政务云安全升级案例](售前案例学习_政务云平台安全升级.md) | 80个委办局安全水平参差不齐 | 管理平台+排名通报 |
-| 制造 | [汽车零部件工控安全案例](售前案例学习_汽车零部件工控安全.md) | PLC被篡改，2000件产品报废 | 旁路部署+IT/OT一体化 |
+| 零售 | [攻击溯源案例](Case-Study/examples/Retail-Company-Attack%20-Attribution.md) | 设备买了但看不清攻击路径 | 三天出溯源报告 |
+| 教育 | [API数据泄露案例](Case-Study/examples/Online-education-system.md) | 测试接口没鉴权泄露30万数据 | 先止血再排查 |
+| 金融 | [城商行数据合规案例](Case-Study/examples/Bank%20data%20security%20compliance.md) | 监管整改通知，数据分类分级不清 | 合规驱动+总分行一体化 |
+| 医疗 | [三甲医院安全案例](Case-Study/examples/Core-system%20security-of-tertial-hospitals.md) | 勒索攻击导致挂号中断2小时 | 业务不中断+防勒索 |
+| 政府 | [政务云安全升级案例](Case-Study/examples/Security%20system%20of%20government%20cloud%20plantform.md) | 80个委办局安全水平参差不齐 | 管理平台+排名通报 |
+| 制造 | [汽车零部件工控安全案例](Case-Study/examples/Safety%20protection%20of%20industrial%20control%20system.md) | PLC被篡改，2000件产品报废 | 旁路部署+IT/OT一体化 |
+| 连锁 | [美宜佳MSS案例](Case-Study/examples/sangfor-mss-meiyijia.md) | 3万家门店安全运营 | MSS托管式安全服务 |
 
 ### 案例模板
 
@@ -53,7 +54,7 @@
 6. 可复用的面试话术
 7. 个人思考
 
-📄 [案例学习模板](casestudy/templates/case-study-template.md)
+[案例学习模板](Case-Study/templates/case-study-template.md)
 
 ---
 
@@ -63,17 +64,15 @@
 
 | 框架 | 说明 | 适用场景 |
 |------|------|---------|
-| [四维追问框架](售前追问四维框架.md) | 环境、时间、资产、预算四个维度的追问逻辑 | 所有售前对话 |
-| [场景化询问顺序](售前询问顺序按场景灵活调整.md) | 危机/常规/探索三种场景的不同询问节奏 | 根据客户状态灵活调整 |
-| [案例引用四法](售前案例引用四法.md) | 模糊化、组合用、坦诚查、行业数据 | 讲案例时不编造 |
+| [四维追问框架](Case-Study/Learning-materials/四维追问框架.md) | 环境、时间、资产、预算四个维度的追问逻辑 | 所有售前对话 |
+| [场景化询问顺序](Case-Study/Learning-materials/场景化询问顺序.md) | 危机/常规/探索三种场景的不同询问节奏 | 根据客户状态灵活调整 |
+| [案例引用四法](Case-Study/Learning-materials/案例引用四法.md) | 模糊化、组合用、坦诚查、行业数据 | 讲案例时不编造 |
 
 ### 售前五步法
 
 ```
 1. 痛点翻译 → 2. 共情锚定 → 3. 方案匹配 → 4. 案例举证 → 5. 反问引导
 ```
-
-详细操作指南见 [AI模拟器使用说明](skills/domain/security-pre-sales-simulator/USAGE-DEMO.md)
 
 ---
 
@@ -88,23 +87,22 @@
 | ├ 存储型 | Payload永久存入数据库，影响所有用户 | [存储型实战](XSS/STORE-XSS/README.md) | 论坛/评论区风险 |
 | └ DOM型 | 纯前端漏洞，不经过服务端，可绕过WAF | [DOM型实战](XSS/DOM-XSS/README.md) | 现代前端框架安全 |
 | **SQL注入** | 通过输入参数篡改SQL查询，窃取/篡改数据库 | [SQL注入完整指南](SQL-Injection/README.md) | 数据库审计、WAF防护 |
-| ├ 字符型 | 字符串参数注入（需闭合引号） | 详见SQL-Injection/README.md | 用户登录框风险 |
-| ├ 数值型 | 数字参数注入（无需引号） | 详见SQL-Injection/README.md | 商品ID/订单号风险 |
-| └ 绕过技巧 | 十六进制编码、字符序统一 | 详见payloads.sql | 高级渗透测试 |
+| └ 绕过技巧 | 十六进制编码、字符序统一 | [payloads.sql](SQL-Injection/payloads.sql) | 高级渗透测试 |
 | **CSRF跨站请求伪造** | 诱导用户执行非预期操作（转账/改密） | [CSRF完整指南](CSRF/README.md) | 业务逻辑安全、Token机制 |
 
 **训练环境**：基于DVWA + PHP/MySQL，配合Burp Suite与浏览器开发者工具
 **推荐顺序**：反射型XSS → 存储型XSS → DOM型XSS → SQL注入 → CSRF
 
-📖 [Web安全技术与售前场景关联指南](casestudy/Web安全技术与售前场景关联.md) — 漏洞原理如何转化为售前话术
+[Web安全技术与售前场景关联指南](Case-Study/Learning-materials/Web安全技术关联指南.md) — 漏洞原理如何转化为售前话术
 
 ### 合规与安全产品
 
 | 模块 | 内容 | 适合 |
 |------|------|------|
-| [合规与法规](casestudy/compliance-and-regulations.md) | 一法三条例、等保体系、行业合规要求 | 了解"为什么客户要买安全" |
-| [安全产品指南](casestudy/security-products-guide.md) | 8大核心产品的通俗解释 | 学会"用客户听得懂的话讲产品" |
-| [云安全架构](casestudy/cloud-security-and-architecture.md) | 云上三大件、云安全产品、架构设计 | 理解"云上和机房的区别" |
+| [合规与法规](Case-Study/Learning-materials/compliance-and-regulations.md) | 一法三条例、等保体系、行业合规要求 | 了解"为什么客户要买安全" |
+| [安全产品指南](Case-Study/Learning-materials/security-products-guide.md) | 8大核心产品的通俗解释 | 学会"用客户听得懂的话讲产品" |
+| [云安全架构](Case-Study/Learning-materials/cloud-security-and-architecture.md) | 云上三大件、云安全产品、架构设计 | 理解"云上和机房的区别" |
+| [医疗行业产品映射](Case-Study/Learning-materials/Safety%20products%20in%20medical%20industry.md) | 医疗行业攻击面与产品对照 | 理解"怎么给医疗客户配产品" |
 
 ---
 
@@ -112,17 +110,16 @@
 
 ### 题库
 
-- [面试题库（Markdown版）](售前安全工程师面试题库.md) — 完整题库，支持搜索
-- [面试题库（Word版）](售前安全工程师面试题库.docx) — 方便打印
+- [面试题库（PDF版）](Case-Study/Learning-materials/售前安全工程师面试题库.pdf) — 方便打印和阅读
 
 ### 实战练习
 
-1. **AI模拟器** — 在终端运行 `hermes` 进入角色扮演模式，模拟真实客户对话
-2. **案例演练** — 从6个案例中选一个，用面试话术部分练习表达
+1. **案例演练** — 从7个案例中选一个，用面试话术部分练习表达
+2. **DVWA环境** — 搭建本地环境演示漏洞效果
 
 ### 学习计划
 
-- [30天速成计划](casestudy/30-day-plan.md) — 从零到能独立面对客户
+- [30天速成计划](Case-Study/Learning-materials/30-day-plan.md) — 从零到能独立面对客户
 
 ---
 
@@ -130,43 +127,50 @@
 
 不知道从哪里找真实案例？
 
-📄 [案例资源收集指南](casestudy/resource-guide.md)
+[案例资源收集指南](Case-Study/Learning-materials/resourse-guide.md)
 
 ---
 
 ## 项目结构
 
 ```
-├── README.md                     # 本文件
-├── INDEX.md                      # 全局索引（建设中）
-├── 售前安全工程师面试题库.md      # 面试题库
-├── 售前案例学习_*.md             # 案例学习笔记（6个）
-├── 售前追问四维框架.md            # 方法论
-├── 售前询问顺序按场景灵活调整.md  # 方法论
-├── 售前案例引用四法.md            # 方法论
-├── XSS/                          # Web安全基础 - XSS跨站脚本
+├── README.md                       # 本文件
+├── INDEX.md                        # 全局索引
+├── XSS/                            # Web安全基础 - XSS跨站脚本
 │   ├── README.md
-│   ├── Reflect-XSS/              # 反射型XSS实战
-│   ├── STORE-XSS/                # 存储型XSS实战
-│   └── DOM-XSS/                  # DOM型XSS实战
-├── SQL-Injection/                # Web安全基础 - SQL注入
+│   ├── Reflect-XSS/                # 反射型XSS实战 + PDF报告
+│   ├── STORE-XSS/                  # 存储型XSS实战 + PDF报告
+│   └── DOM-XSS/                    # DOM型XSS实战 + PDF报告
+├── SQL-Injection/                  # Web安全基础 - SQL注入
 │   ├── README.md
 │   ├── DVWA-SQL-Injection.pdf
 │   └── payloads.sql
-├── CSRF/                         # Web安全基础 - CSRF跨站请求伪造
+├── CSRF/                           # Web安全基础 - CSRF跨站请求伪造
 │   ├── README.md
 │   └── DVWA CSRF 渗透测试训练报告.pdf
-├── casestudy/                    # 案例学习目录
-│   ├── 30-day-plan.md            # 30天学习计划
-│   ├── compliance-and-regulations.md
-│   ├── security-products-guide.md
-│   ├── cloud-security-and-architecture.md
-│   ├── resource-guide.md
-│   ├── templates/
-│   └── examples/
-└── skills/                       # AI模拟器
-    └── domain/
-        └── security-pre-sales-simulator/
+└── Case-Study/                     # 售前案例与学习资料
+    ├── Learning-materials/         # 基础知识与方法论
+    │   ├── 30-day-plan.md
+    │   ├── compliance-and-regulations.md
+    │   ├── security-products-guide.md
+    │   ├── cloud-security-and-architecture.md
+    │   ├── resourse-guide.md
+    │   ├── Web安全技术关联指南.md
+    │   ├── Safety products in medical industry.md
+    │   ├── 四维追问框架.md
+    │   ├── 场景化询问顺序.md
+    │   ├── 案例引用四法.md
+    │   └── 售前安全工程师面试题库.pdf
+    ├── examples/                   # 行业案例（7个）
+    │   ├── Retail-Company-Attack -Attribution.md
+    │   ├── Online-education-system.md
+    │   ├── Bank data security compliance.md
+    │   ├── Core-system security-of-tertial-hospitals.md
+    │   ├── Security system of government cloud plantform.md
+    │   ├── Safety protection of industrial control system.md
+    │   └── sangfor-mss-meiyijia.md
+    └── templates/                  # 案例模板
+        └── case-study-template.md
 ```
 
 ---
@@ -191,15 +195,14 @@
   └─ 记录自己的思考
 
 第4步：练实战
-  ├─ 用AI模拟器练习对话
-  ├─ 模拟面试场景
   ├─ 搭建DVWA环境演示给客户看
+  ├─ 模拟面试场景
   └─ 反复打磨表达方式
 
 第5步：去面试
   ├─ 刷面试题库
   ├─ 准备1-2个拿手案例
-  ─ 自信上场
+  └─ 自信上场
 ```
 
 ---
@@ -208,7 +211,8 @@
 
 | 版本 | 日期 | 更新内容 |
 |------|------|---------|
-| v0.1 | 2026-05 | 初始版本，包含6个案例 + 3个方法论 + 基础知识 |
+| v0.2 | 2026-05 | 新增Web安全基础模块(XSS/SQL注入/CSRF)，修正全部链接 |
+| v0.1 | 2026-05 | 初始版本，包含7个案例 + 3个方法论 + 基础知识 |
 
 ---
 
