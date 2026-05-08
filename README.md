@@ -96,6 +96,8 @@
 **训练环境**：基于DVWA + PHP/MySQL，配合Burp Suite与浏览器开发者工具
 **推荐顺序**：反射型XSS → 存储型XSS → DOM型XSS → SQL注入 → CSRF
 
+📖 [Web安全技术与售前场景关联指南](casestudy/Web安全技术与售前场景关联.md) — 漏洞原理如何转化为售前话术
+
 ### 合规与安全产品
 
 | 模块 | 内容 | 适合 |
