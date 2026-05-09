@@ -3,6 +3,9 @@
 src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>
 <br />本作品采用 <a rel="license" 
 href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 国际许可协议</a> 进行许可。
+
+---
+
 # 网络安全售前工程师实战手册
 
 > 一套从入门到面试的完整售前安全工程师学习资料，基于真实场景和方法论沉淀。
