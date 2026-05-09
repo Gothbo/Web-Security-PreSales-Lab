@@ -46,3 +46,16 @@
 | "你在制造行业有什么经验？" | [制造工控安全](Case-Study/examples/Safety-protection-of-industrial-control-system.md) |
 | "你懂Web安全吗？" | [XSS指南](XSS/README.md) / [SQL注入指南](SQL-Injection/README.md) / [CSRF指南](CSRF/README.md) |
 | "你怎么学习售前的？" | [三十天计划](Case-Study/Learning-materials/三十天计划.md) + [面试题库](Case-Study/Learning-materials/售前安全工程师面试题库.pdf) |
+
+---
+
+## 按行业找产品映射指南
+
+面客户前必读的产品方案指南：
+
+| 行业 | 指南链接 | 核心内容 |
+|------|---------|---------|
+| **金融** | [金融行业安全产品映射手册](Case-Study/Learning-materials/金融行业安全产品映射手册.md) | 银行零信任、数据安全、DevSecOps |
+| **制造** | [制造业工控安全产品映射手册](Case-Study/Learning-materials/制造业工控系统安全产品映射手册.md) | IT/OT隔离、微隔离、工控协议 |
+| **医疗** | [医疗行业安全产品映射手册](Case-Study/Learning-materials/医疗行业安全产品映射手册.md) | 防勒索、等保三级、业务连续性 |
+| **政务** | [政务行业安全产品映射指南](Case-Study/Learning-materials/政务行业安全产品映射指南.md) | 政务云、等保合规、排名通报 |
